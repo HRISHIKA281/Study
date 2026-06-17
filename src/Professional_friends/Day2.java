@@ -10,15 +10,18 @@ public class Day2 {
         if(arr.length>=2 && arr[arr.length-2]==arr[arr.length-1]){
             arr[arr.length-2]=Integer.MIN_VALUE;
         }
-//        int k=0;
-//        for(int i=0;i<arr.length;i++){
-//            if(arr[i]!=Integer.MIN_VALUE){
-//                arr[k]=arr[i];
-//                k++;
-//            }
-//        }
-        for(int i=0;i<arr.length;i++){
-            System.out.println(arr[i]);
+        int k=0;
+        int i=0;
+        while(i<arr.length){
+            if(arr[i]!=Integer.MIN_VALUE){
+                arr[k]=arr[i];
+                arr[i]=Integer.MIN_VALUE;
+                k++;
+            }
+            i++;
+        }
+        for(int j=0;j<arr.length;j++){
+            System.out.println(arr[j]);
         }
     }
     public static void main(String []args){
